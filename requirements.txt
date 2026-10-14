@@ -1,0 +1,11 @@
+# Face Mouse runtime dependencies (Windows 10/11, Python 3.10 - 3.12)
+#
+# mediapipe's legacy "solutions" API (FaceMesh) is used, so it is capped at 0.10.x.
+# mediapipe itself depends on opencv-contrib-python; it is listed explicitly so that
+# pip never installs both opencv-python and opencv-contrib-python side by side.
+mediapipe>=0.10.14,<0.10.22
+opencv-contrib-python>=4.8
+numpy>=1.24
+# Reads the real device names of Windows (DirectShow) cameras. Optional: without it
+# the app still works but cameras are listed as "Camera 0", "Camera 1", ...
+pygrabber>=0.2; platform_system == "Windows"
